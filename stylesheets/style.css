@@ -43,19 +43,54 @@ body {
 /* HEADER */
 
 /* MAIN */
-.ms_task-name.completed {
-    text-decoration: line-through;
-}
-
 .ms_todo-task {
     cursor: pointer;
-
-    /* ANIMATION */
-    transition: opacity 200ms ease;
 }
 
-.ms_todo-task:hover {
+.ms_task-name {
+    opacity: 1;
+
+    /* ANIMATION */
+    transition: opacity 250ms ease;
+}
+
+.ms_task-name.completed {
+    text-decoration: line-through;
+    opacity: .3;
+}
+
+.ms_task-name:hover {
     opacity: .5;
+}
+
+
+
+.ms_task-status.completed {
+    color: var(--clr-accent);
+}
+
+
+
+.ms_task-remove {
+    position: relative;
+}
+
+.ms_task-remove::after{
+    content: 'Remove';
+    font: var(--fontweight-default) var(--fontsize-default) var(--fontfamily-default);
+    font-size: .6rem;
+    background-color: antiquewhite;
+    padding: .4em;
+    opacity: 0;
+
+    /* POSITION */
+    position: absolute;
+        top: -1.5em;
+        left: -4em;
+}
+
+.ms_task-remove:hover::after{
+    opacity: 1;
 }
 /*#endregion BLOCKS: component specific rules */
 /* --------------------------------------------------------------------------------- */

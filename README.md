@@ -2,6 +2,11 @@
 
 ## Versions
 
+### 0.4: Minor UX improvement
+
+* Added a pop up to show "remove" when hovering over the X
+* Added small opacity transition on the task name
+
 ### 0.3.2: Added Bonus 2
 
 ### 0.3.1: Added Bonus 1

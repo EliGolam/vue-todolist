@@ -16,8 +16,10 @@ const todoApp = new Vue({
         addTask() {
             console.log('DEBUG - addTask clicked\nTask name', this.newTask);
             
+            let task = this.newTask.trim();
+
             if(!this.isTaskInList()) {
-                this.todoList.push(new Task(this.newTask));
+                this.todoList.push(new Task(task));
             } 
         },
 
@@ -29,7 +31,7 @@ const todoApp = new Vue({
 
         isTaskInList() {
             for(item of this.todoList) {
-                if (item.name !== this.newTask) continue; // Guard Statement
+                if (item.name !== this.newTask.trim()) continue; // Guard Statement
                 console.log('DEBUG - Task already exists:', item.name);
                 return true;  
             }

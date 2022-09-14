@@ -79,7 +79,7 @@ body {
     content: 'Remove';
     font: var(--fontweight-default) var(--fontsize-default) var(--fontfamily-default);
     font-size: .6rem;
-    background-color: antiquewhite;
+    background-color: var(--clr-white);
     padding: .4em;
     opacity: 0;
 

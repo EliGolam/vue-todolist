@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.4.1: Added check on new task input for whitespace
+
 ### 0.4: Minor UX improvement
 
 * Added a pop up to show "remove" when hovering over the X

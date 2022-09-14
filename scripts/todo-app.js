@@ -8,14 +8,33 @@ const todoApp = new Vue({
 
     data: {
         todoList: createObjArray(TODO_DATA),
+
+        newTask: '',
     },
 
     methods: {
+        addTask() {
+            console.log('DEBUG - addTask clicked\nTask name', this.newTask);
+            
+            if(!this.isTaskInList()) {
+                this.todoList.push(new Task(this.newTask));
+            } 
+        },
+
         removeTask(idxTaskToRemove) {
-            console.log('DEBUG - removeTask function clicked');
+            // console.log('DEBUG - removeTask function clicked');
             this.todoList.splice(idxTaskToRemove, 1);
-            console.log('DEBUG - updated ToDo List:', this.todoList);
-        }
+            // console.log('DEBUG - updated ToDo List:', this.todoList);
+        },
+
+        isTaskInList() {
+            for(item of this.todoList) {
+                if (item.name !== this.newTask) continue; // Guard Statement
+                console.log('DEBUG - Task already exists:', item.name);
+                return true;  
+            }
+            return false;
+        }, 
     }
 });
 

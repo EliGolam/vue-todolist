@@ -56,6 +56,18 @@
         <main class="ms_main">
             <section class="ms_todo-section">
                 <h2 class="ms_todo-section_title ms_text-center">Tasks</h2>
+                <form action="#" class="ms_flex">
+                    <label for="add-task">Add New Task</label>
+                    <input type="text" name="add-task" id="add-task" placeholder="Task Name"
+                        v-model="newTask"
+                        class="ms_add-task"
+                    >
+                    <button type="button"
+                        @click="addTask()"
+                    >
+                        Add
+                    </button>
+                </form>
 
                 <div class="ms_todo-list-container">
                     <ul class="ms_todo-list flow">
@@ -71,7 +83,7 @@
                                     <h3       
                                         class="ms_task-name ms_text-center"
                                         :class="{ completed: task.completed }"
-                                    > {{ task.activity }}</h3>
+                                    > {{ task.name }}</h3>
                                                                         
                                 </div>
                                 <p class="ms_text-center">Completed: {{ task.completed }}</p>

@@ -3,9 +3,9 @@ console.log('SCRIPT: utilities.js Loaded!');
 
 // CLASSES
 class Task {
-    constructor (activity, completed) {
-        this.activity = activity;
-        this.completed = completed;
+    constructor (name, completed) {
+        this.name = name;
+        this.completed = completed === undefined ? false : completed;
     }
 }
 

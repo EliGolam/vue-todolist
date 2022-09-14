@@ -47,8 +47,15 @@ body {
     text-decoration: line-through;
 }
 
-.ms_add-task {
-    /* background-color: red; */
+.ms_todo-task {
+    cursor: pointer;
+
+    /* ANIMATION */
+    transition: opacity 200ms ease;
+}
+
+.ms_todo-task:hover {
+    opacity: .5;
 }
 /*#endregion BLOCKS: component specific rules */
 /* --------------------------------------------------------------------------------- */

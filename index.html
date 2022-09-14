@@ -76,7 +76,10 @@
                         <li
                             v-for="(task, index) in todoList"
                         >
-                            <article class="ms_todo-task">
+                            <article 
+                                @click="task.completed = !task.completed"
+                                class="ms_todo-task"
+                            >
                                 <div class="ms_flex">
                                     <i class="fa-solid fa-x"
                                         @click="removeTask(index)"

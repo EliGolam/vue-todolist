@@ -1,4 +1,7 @@
-# html-css-personal-reset
+# ToDo App
 
+## Versions
 
-A template to start a basic website. 
+### 0.1: Completed Milestone 1
+
+### 0.0.1: Setup

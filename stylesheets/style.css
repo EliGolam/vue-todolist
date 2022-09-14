@@ -2,7 +2,7 @@
 /*#region GENERAL DEFAULTS  */
 body {
     font: var(--fontweight-default) var(--fontsize-default) var(--fontfamily-default);
-    columns: var(--clr-dark-grey);
+    color: var(--clr-dark-grey);
 }
 /*#endregion GENERAL DEFAULTS  */
 /* --------------------------------------------------------------------------------- */
@@ -13,6 +13,10 @@ body {
 /*#region aesthetic elements */
 .flow > * + * {
     margin-top: var(--flow-spacing);
+}
+
+.ms_text-center {
+    text-align: center;
 }
 /*#endregion aesthetic elements */
 
@@ -29,6 +33,13 @@ body {
 
 /* --------------------------------------------------------------------------------- */
 /*#region BLOCKS: component specific rules */
+/* HEADER */
+
+/* MAIN */
+.ms_task-name.completed {
+    text-decoration: line-through;
+}
+
 /*#endregion BLOCKS: component specific rules */
 /* --------------------------------------------------------------------------------- */
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- METADATA -->
 <head>
-    <title>Title</title>
+    <title>Simple To Do List | Mahfuzul Elias</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8">
@@ -20,8 +20,11 @@
 
     <!--#region Stylesheets and Scripts -->
     <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
+    
+    <!-- VueJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
 
     <!-- My CSS -->
     <link rel="stylesheet" href="./stylesheets/css-reset.css" type="text/css">
@@ -29,7 +32,9 @@
     <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
 
     <!-- My Scripts -->
-    <script src="./scripts/script.js" type="text/javascript" defer></script>
+    <script src="./scripts/data.js" type="text/javascript" defer></script>
+    <script src="./scripts/utilities.js" type="text/javascript" defer></script>
+    <script src="./scripts/todo-app.js" type="text/javascript" defer></script>
     <!--#endregion Stylesheets and Scripts -->
 
     <!--#region META -->
@@ -42,6 +47,33 @@
 
 <!-- BODY -->
 <body>
-    
+    <div id="todo-app">
+        <header class="ms_header">
+            <h1 class="ms_page-title ms_text-center">Simple To Do List</h1>
+            <p class="ms_page-subtitle ms_text-center">by Mahfuzul Elias</p>
+        </header>
+
+        <main class="ms_main">
+            <section class="ms_todo-section">
+                <h2 class="ms_todo-section_title ms_text-center">Tasks</h2>
+
+                <div class="ms_todo-list-container">
+                    <ul class="ms_todo-list flow">
+                        <li
+                            v-for="(task, index) in todoList"
+                        >
+                            <article class="ms_todo-task">
+                                <h3       
+                                    class="ms_task-name ms_text-center"
+                                    :class="{ completed: task.completed }"
+                                > {{ task.activity }}</h3>
+                                <p class="ms_text-center">Completed: {{ task.completed }}</p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

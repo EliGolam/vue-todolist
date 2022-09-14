@@ -10,7 +10,7 @@ body {
 /* --------------------------------------------------------------------------------- */
 /*#region UTILITIES */ 
 /* ------------------------------------------ */
-/*#region aesthetic elements */
+
 .flow > * + * {
     margin-top: var(--flow-spacing);
 }
@@ -18,7 +18,14 @@ body {
 .ms_text-center {
     text-align: center;
 }
-/*#endregion aesthetic elements */
+
+.ms_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
 
 /*#endregion UTILITIES */
 /* --------------------------------------------------------------------------------- */

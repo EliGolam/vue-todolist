@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.3.1: Added Bonus 1
+
 ### 0.3: Completed Milestone 3
 
 ### 0.2: Completed Milestone 2

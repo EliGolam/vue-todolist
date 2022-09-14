@@ -56,14 +56,16 @@
         <main class="ms_main">
             <section class="ms_todo-section">
                 <h2 class="ms_todo-section_title ms_text-center">Tasks</h2>
-                <form action="#" class="ms_flex">
+                <form action="#" class="ms_flex" @submit.prevent>
                     <label for="add-task">Add New Task</label>
                     <input type="text" name="add-task" id="add-task" placeholder="Task Name"
                         v-model="newTask"
                         class="ms_add-task"
+                        @keyUp.enter="addTask()"
                     >
-                    <button type="button"
+                    <button type="submit"
                         @click="addTask()"
+                        @keyUp.enter="addTask()"
                     >
                         Add
                     </button>

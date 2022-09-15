@@ -15,7 +15,7 @@ const todoApp = new Vue({
     methods: {
         addTask() {
             let task = this.newTask.trim();
-            this.newTask = ''
+            this.newTask = '';
 
             if(!this.isTaskInList(task)) {
                 this.todoList.push(new Task(task));
@@ -23,15 +23,16 @@ const todoApp = new Vue({
         },
 
         removeTask(idxTaskToRemove) {
-            // console.log('DEBUG - removeTask function clicked');
-            this.todoList.splice(idxTaskToRemove, 1);
-            // console.log('DEBUG - updated ToDo List:', this.todoList);
+            // this.todoList.splice(idxTaskToRemove, 1); // This removes the task completely from the list
+            this.todoList[idxTaskToRemove].removed = true;
+            // console.log(`Task ${idxTaskToRemove}: ${this.todoList[idxTaskToRemove].completed}`);
         },
 
         isTaskInList(task) {
             if (task.length === 0 || task === undefined) return true; 
             for(item of this.todoList) {
                 if (item.name !== task) continue; // Guard Statement
+                if (item.removed) continue; // Guard Statement
                 console.log('DEBUG - Task already exists:', item.name);
                 return true;  
             }

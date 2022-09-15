@@ -74,6 +74,7 @@
                     <ul class="ms_todo-list flow">
                         <li
                             v-for="(task, index) in todoList"
+                            v-show="!task.removed"
                         >
                             <article class="ms_todo-task" >
                                 <div class="ms_flex ms_task-container">

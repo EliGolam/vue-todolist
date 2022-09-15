@@ -2,6 +2,14 @@
 
 ## Versions
 
+### 0.4.5: Improved removed and adding feature
+
+* Added ability for user to add a task if it's in the list but has been removed before
+
+### 0.4.4: Added an extra boolean "removed" in the Task Class
+
+* Allows implementation of the removeTask function without needing to remove the item from the list forever
+
 ### 0.4.3: Added Check Mark to 'Complete' Task
 
 ### 0.4.2: Minor Layout correction

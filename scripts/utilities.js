@@ -6,6 +6,7 @@ class Task {
     constructor (name, completed) {
         this.name = name;
         this.completed = completed === undefined ? false : completed;
+        this.removed = false;
     }
 }
 

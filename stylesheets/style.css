@@ -64,6 +64,12 @@ body {
 }
 
 
+.ms_task-container {
+    max-width: 160px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
 
 .ms_task-status.completed {
     color: var(--clr-accent);

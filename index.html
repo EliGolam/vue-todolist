@@ -80,21 +80,22 @@
                                 @click="task.completed = !task.completed"
                                 class="ms_todo-task"
                             >
-                                <div class="ms_flex">
+                                <div class="ms_flex ms_task-container">
                                     <i class="fa-solid fa-x ms_task-remove"
                                         @click="removeTask(index)"
                                     ></i>
 
-                                    <h3       
-                                        class="ms_task-name ms_text-center"
-                                        :class="{ completed: task.completed }"
-                                    > {{ task.name }}</h3>
-                                                                        
+                                    <div>
+                                        <h3       
+                                            class="ms_task-name ms_text-center"
+                                            :class="{ completed: task.completed }"
+                                        > {{ task.name }}</h3>
+
+                                        <p class="ms_task-status ms_text-center"
+                                            :class="{ completed: task.completed }"
+                                        >Completed: {{ task.completed }}</p>
+                                    </div>                                 
                                 </div>
-                                <p class="ms_task-status ms_text-center"
-                                    :class="{ completed: task.completed }"
-                                >
-                                Completed: {{ task.completed }}</p>
                             </article>
                         </li>
                     </ul>

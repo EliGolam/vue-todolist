@@ -14,13 +14,12 @@ const todoApp = new Vue({
 
     methods: {
         addTask() {
-            console.log('DEBUG - addTask clicked\nTask name', this.newTask);
-            
             let task = this.newTask.trim();
+            this.newTask = ''
 
-            if(!this.isTaskInList()) {
+            if(!this.isTaskInList(task)) {
                 this.todoList.push(new Task(task));
-            } 
+            }
         },
 
         removeTask(idxTaskToRemove) {
@@ -29,9 +28,10 @@ const todoApp = new Vue({
             // console.log('DEBUG - updated ToDo List:', this.todoList);
         },
 
-        isTaskInList() {
+        isTaskInList(task) {
+            if (task.length === 0 || task === undefined) return true; 
             for(item of this.todoList) {
-                if (item.name !== this.newTask.trim()) continue; // Guard Statement
+                if (item.name !== task) continue; // Guard Statement
                 console.log('DEBUG - Task already exists:', item.name);
                 return true;  
             }

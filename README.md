@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.4.3: Added Check Mark to 'Complete' Task
+
 ### 0.4.2: Minor Layout correction
 
 ### 0.4.1: Added check on new task input for whitespace

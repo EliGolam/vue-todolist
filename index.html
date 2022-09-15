@@ -63,9 +63,8 @@
                         class="ms_add-task"
                         @keyUp.enter="addTask()"
                     >
-                    <button type="submit"
+                    <button type="button"
                         @click="addTask()"
-                        @keyUp.enter="addTask()"
                     >
                         Add
                     </button>
@@ -76,13 +75,16 @@
                         <li
                             v-for="(task, index) in todoList"
                         >
-                            <article 
-                                @click="task.completed = !task.completed"
-                                class="ms_todo-task"
-                            >
+                            <article class="ms_todo-task" >
                                 <div class="ms_flex ms_task-container">
                                     <i class="fa-solid fa-x ms_task-remove"
                                         @click="removeTask(index)"
+                                        v-show="task.completed"
+                                    ></i>
+
+                                    <i class="fa-solid fa-check ms_task-remove"
+                                        v-show="!task.completed"
+                                        @click="task.completed = !task.completed"
                                     ></i>
 
                                     <div>
@@ -96,6 +98,7 @@
                                         >Completed: {{ task.completed }}</p>
                                     </div>                                 
                                 </div>
+
                             </article>
                         </li>
                     </ul>
